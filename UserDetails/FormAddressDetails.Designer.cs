@@ -34,12 +34,12 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.firstNameTextBox = new System.Windows.Forms.TextBox();
+            this.lastNameTextBox = new System.Windows.Forms.TextBox();
+            this.addressLine1TextBox = new System.Windows.Forms.TextBox();
+            this.addressLine2TextBox = new System.Windows.Forms.TextBox();
+            this.cityTextBox = new System.Windows.Forms.TextBox();
+            this.postCodeTextBox = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -115,53 +115,53 @@
             this.label6.TabIndex = 5;
             this.label6.Text = "Postcode";
             // 
-            // textBox1
+            // firstNameTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(281, 55);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(122, 20);
-            this.textBox1.TabIndex = 6;
+            this.firstNameTextBox.Location = new System.Drawing.Point(281, 55);
+            this.firstNameTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.firstNameTextBox.Name = "firstNameTextBox";
+            this.firstNameTextBox.Size = new System.Drawing.Size(122, 20);
+            this.firstNameTextBox.TabIndex = 6;
             // 
-            // textBox2
+            // lastNameTextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(281, 84);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(122, 20);
-            this.textBox2.TabIndex = 7;
+            this.lastNameTextBox.Location = new System.Drawing.Point(281, 84);
+            this.lastNameTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lastNameTextBox.Name = "lastNameTextBox";
+            this.lastNameTextBox.Size = new System.Drawing.Size(122, 20);
+            this.lastNameTextBox.TabIndex = 7;
             // 
-            // textBox3
+            // addressLine1TextBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(281, 114);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(122, 20);
-            this.textBox3.TabIndex = 8;
+            this.addressLine1TextBox.Location = new System.Drawing.Point(281, 114);
+            this.addressLine1TextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addressLine1TextBox.Name = "addressLine1TextBox";
+            this.addressLine1TextBox.Size = new System.Drawing.Size(122, 20);
+            this.addressLine1TextBox.TabIndex = 8;
             // 
-            // textBox4
+            // addressLine2TextBox
             // 
-            this.textBox4.Location = new System.Drawing.Point(281, 144);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(122, 20);
-            this.textBox4.TabIndex = 9;
+            this.addressLine2TextBox.Location = new System.Drawing.Point(281, 144);
+            this.addressLine2TextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addressLine2TextBox.Name = "addressLine2TextBox";
+            this.addressLine2TextBox.Size = new System.Drawing.Size(122, 20);
+            this.addressLine2TextBox.TabIndex = 9;
             // 
-            // textBox5
+            // cityTextBox
             // 
-            this.textBox5.Location = new System.Drawing.Point(281, 174);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(122, 20);
-            this.textBox5.TabIndex = 10;
+            this.cityTextBox.Location = new System.Drawing.Point(281, 174);
+            this.cityTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cityTextBox.Name = "cityTextBox";
+            this.cityTextBox.Size = new System.Drawing.Size(122, 20);
+            this.cityTextBox.TabIndex = 10;
             // 
-            // textBox6
+            // postCodeTextBox
             // 
-            this.textBox6.Location = new System.Drawing.Point(281, 203);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(122, 20);
-            this.textBox6.TabIndex = 11;
+            this.postCodeTextBox.Location = new System.Drawing.Point(281, 203);
+            this.postCodeTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.postCodeTextBox.Name = "postCodeTextBox";
+            this.postCodeTextBox.Size = new System.Drawing.Size(122, 20);
+            this.postCodeTextBox.TabIndex = 11;
             // 
             // button1
             // 
@@ -173,6 +173,7 @@
             this.button1.TabIndex = 12;
             this.button1.Text = "Submit";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.submitDetails);
             // 
             // FormAddressDetails
             // 
@@ -180,12 +181,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(492, 325);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.postCodeTextBox);
+            this.Controls.Add(this.cityTextBox);
+            this.Controls.Add(this.addressLine2TextBox);
+            this.Controls.Add(this.addressLine1TextBox);
+            this.Controls.Add(this.lastNameTextBox);
+            this.Controls.Add(this.firstNameTextBox);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -209,12 +210,12 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox firstNameTextBox;
+        private System.Windows.Forms.TextBox lastNameTextBox;
+        private System.Windows.Forms.TextBox addressLine1TextBox;
+        private System.Windows.Forms.TextBox addressLine2TextBox;
+        private System.Windows.Forms.TextBox cityTextBox;
+        private System.Windows.Forms.TextBox postCodeTextBox;
         private System.Windows.Forms.Button button1;
     }
 }

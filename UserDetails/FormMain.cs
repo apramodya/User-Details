@@ -12,6 +12,8 @@ namespace UserDetails
 {
     public partial class FormMain : Form
     {
+        UserDetails ud = new UserDetails();
+
         public FormMain()
         {
             InitializeComponent();
@@ -20,15 +22,22 @@ namespace UserDetails
         private void enterDetails(object sender, EventArgs e)
         {
             FormAddressDetails form = new FormAddressDetails();
-            form.Activate();
+            form.ud = this.ud;
             form.ShowDialog();
+            this.ud = form.ud;
+            form.Dispose();
         }
 
         private void reviewDetails(object sender, EventArgs e)
         {
             FormSummary form = new FormSummary();
-            form.Activate();
+            form.ud = this.ud;
             form.ShowDialog();
+        }
+
+        private void FormMain_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

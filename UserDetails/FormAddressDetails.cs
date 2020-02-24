@@ -12,7 +12,7 @@ namespace UserDetails
 {
     public partial class FormAddressDetails : Form
     {
-        UserDetails ud;
+        internal UserDetails ud { get; set; }
 
         public FormAddressDetails()
         {
@@ -22,6 +22,18 @@ namespace UserDetails
         private void FormAddressDetails_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void submitDetails(object sender, EventArgs e)
+        {
+            ud = new UserDetails();
+            ud.FirstName = firstNameTextBox.Text;
+            ud.LastName = lastNameTextBox.Text;
+            ud.AddressLine1 = addressLine1TextBox.Text;
+            ud.AddressLine2 = addressLine2TextBox.Text;
+            ud.City = cityTextBox.Text;
+            ud.PostCode = postCodeTextBox.Text;
+            this.Hide();
         }
     }
 }
