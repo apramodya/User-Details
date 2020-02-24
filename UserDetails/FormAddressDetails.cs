@@ -12,9 +12,16 @@ namespace UserDetails
 {
     public partial class FormAddressDetails : Form
     {
+        UserDetails ud;
+
         public FormAddressDetails()
         {
             InitializeComponent();
+        }
+
+        private void FormAddressDetails_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

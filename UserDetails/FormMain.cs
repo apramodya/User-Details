@@ -16,5 +16,19 @@ namespace UserDetails
         {
             InitializeComponent();
         }
+
+        private void enterDetails(object sender, EventArgs e)
+        {
+            FormAddressDetails form = new FormAddressDetails();
+            form.Activate();
+            form.ShowDialog();
+        }
+
+        private void reviewDetails(object sender, EventArgs e)
+        {
+            FormSummary form = new FormSummary();
+            form.Activate();
+            form.ShowDialog();
+        }
     }
 }
