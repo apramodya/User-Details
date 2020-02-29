@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -38,6 +39,19 @@ namespace UserDetails
         private void FormMain_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void fileTest(object sender, EventArgs e)
+        {
+            string filePath = String.Format("{0}\\{1}", Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "pramodya.txt");
+            FileStream myFile = new FileStream(filePath, FileMode.Append, FileAccess.Write);
+
+            StreamWriter sw = new StreamWriter(myFile);
+            sw.WriteLine("pramodya");
+
+            sw.Flush();
+            sw.Close();
+            myFile.Close();
         }
     }
 }
