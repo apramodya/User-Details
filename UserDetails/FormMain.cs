@@ -46,13 +46,11 @@ namespace UserDetails
             string filePath = String.Format("{0}\\{1}", Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "pramodya.txt");
             FileStream myFile = new FileStream(filePath, FileMode.Append, FileAccess.Write);
 
-            StreamWriter sw = new StreamWriter(myFile);
+            StreamWriter sw = new StreamWriter(myFile, Encoding.Unicode);
             try
             {
                 sw.WriteLine("pramodya");
                 sw.Flush();
-                sw.Close();
-                myFile.Close();
             } catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Something went wrong!", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -72,7 +70,7 @@ namespace UserDetails
             try
             {
                 myFile = new FileStream(filePath, FileMode.Open, FileAccess.Read);
-                sr = new StreamReader(myFile);
+                sr = new StreamReader(myFile, Encoding.Unicode);
                 String s = sr.ReadLine();
 
                 while (s != null)
