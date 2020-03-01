@@ -47,11 +47,58 @@ namespace UserDetails
             FileStream myFile = new FileStream(filePath, FileMode.Append, FileAccess.Write);
 
             StreamWriter sw = new StreamWriter(myFile);
-            sw.WriteLine("pramodya");
+            try
+            {
+                sw.WriteLine("pramodya");
+                sw.Flush();
+                sw.Close();
+                myFile.Close();
+            } catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Something went wrong!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            } finally
+            {
+                sw.Close();
+                myFile.Close();
+            }
+        }
 
-            sw.Flush();
-            sw.Close();
-            myFile.Close();
+        private void fileRead(object sender, EventArgs e)
+        {
+            string filePath = String.Format("{0}\\{1}", Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "pramodya.txt");
+            FileStream myFile = null;
+            StreamReader sr = null;
+
+            try
+            {
+                myFile = new FileStream(filePath, FileMode.Open, FileAccess.Read);
+                sr = new StreamReader(myFile);
+                String s = sr.ReadLine();
+
+                while (s != null)
+                {
+                    MessageBox.Show(s);
+                    s = sr.ReadLine();
+                }
+
+                sr.Close();
+                myFile.Close();
+            } catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Something went wrong!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            finally
+            {
+               try
+                {
+                    sr.Close();
+                    myFile.Close();
+                } catch
+                {
+
+                }
+            }
+           
         }
     }
 }
