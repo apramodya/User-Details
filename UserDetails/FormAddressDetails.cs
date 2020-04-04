@@ -16,6 +16,7 @@ namespace UserDetails
     public partial class FormAddressDetails : Form
     {
         internal UserDetails ud { get; set; }
+        private DSContacts dbData = new DSContacts();
 
         public FormAddressDetails()
         {
@@ -29,6 +30,7 @@ namespace UserDetails
 
         private void submitDetails(object sender, EventArgs e)
         {
+            // new UserDetails object
             ud = new UserDetails();
             ud.FirstName = firstNameTextBox.Text;
             ud.LastName = lastNameTextBox.Text;
@@ -37,6 +39,14 @@ namespace UserDetails
             ud.City = cityTextBox.Text;
             ud.PostCode = postCodeTextBox.Text;
 
+            // save to DataSet
+            DSContacts.ContactsRow row = this.dbData.Contacts.NewContactsRow();
+            row.first_name = firstNameTextBox.Text;
+            row.last_name = lastNameTextBox.Text;
+            this.dbData.Contacts.AddContactsRow(row);
+            dbData.AcceptChanges();
+
+            // file write
             string filePath = String.Format("{0}\\{1}", Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "userDetails.txt");
             FileStream myFile = new FileStream(filePath, FileMode.OpenOrCreate, FileAccess.Write);
             IFormatter formatter = new BinaryFormatter();

@@ -46,6 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DSContacts.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSContacts.xsd</DependentUpon>
+    </Compile>
     <Compile Include="FormAddressDetails.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +90,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="DSContacts.xsc">
+      <DependentUpon>DSContacts.xsd</DependentUpon>
+    </None>
+    <None Include="DSContacts.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSContacts.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DSContacts.xss">
+      <DependentUpon>DSContacts.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

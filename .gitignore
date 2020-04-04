@@ -338,3 +338,9 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database
 healthchecksdb
+/UserDetails/MulptipleRowControl.cs
+/UserDetails/MulptipleRowControl.Designer.cs
+/UserDetails/MultipleDataEntry.resx
+/UserDetails/MultipleDataEntry.Designer.cs
+/UserDetails/MultipleDataEntry.cs
+/UserDetails/MulptipleRowControl.resx
